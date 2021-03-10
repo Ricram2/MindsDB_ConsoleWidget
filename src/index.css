@@ -1,13 +1,20 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sql-hl-keyword{
+    color:rgb(125, 169, 171);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sql-hl-string{
+    color: white
+}
+
+.btn {
+    @apply text-center py-3 text-gray-500 w-full text-sm hover:text-gray-800 focus:outline-none;
+}
+
+.btn-sel {
+    @apply text-center py-3 text-green-700 w-full text-lg focus:outline-none ;
 }

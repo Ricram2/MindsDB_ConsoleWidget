@@ -1,0 +1,102 @@
+{
+    "Train": {
+        "MySQL": {
+            "Airline": "`SELECT satisfaction AS predicted satisfaction_ confidence AS confidence, satisfaction_explain AS info FROM mindsdb.airline_survey_model WHERE \u2018Custom Type\u2019 = \u2018Loyal Customer\u2019\tAND age=52 AND \u2018Type of Travel\u2019=\u2018Business travel\u2019 AND \u2018Class\u2019=\u2018Eco\u2019;`",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "Postgress": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "MongoDB": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "MariaDB": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "ClickHouse": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "SQL Server": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        }
+    },
+    "Predict": {
+        "MySQL": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "Postgress": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "MongoDB": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "MariaDB": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "ClickHouse": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        },
+        "SQL Server": {
+            "Airline": "Query here",
+            "Default": "Query here",
+            "Time series": "Query here",
+            "Sales": "Query here",
+            "Credit Card": "Query here",
+            "Housing": "Query here"
+        }
+    }
+}
