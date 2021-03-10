@@ -11,10 +11,6 @@ const highlightedsqlTrainAirlineString = highlight(sqlTrainAirlineString, {
   html: true
 })
 
-const sqlString = `SELECT satisfaction AS predicted satisfaction_ confidence AS confidence, satisfaction_explain AS info FROM mindsdb.airline_survey_model WHERE ‘Custom Type’ = ‘Loyal Customer’	AND age=52 AND ‘Type of Travel’=‘Business travel’ AND ‘Class’=‘Eco’;`
-const highlighted = highlight(sqlString, {
-  html: true
-})
 
 const pstgressString = `SELECT lol FROM postgress;`
 const highlightedPostgress = highlight(pstgressString, {
