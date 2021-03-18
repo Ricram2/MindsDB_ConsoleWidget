@@ -1,102 +1,85 @@
 {
     "Train": {
         "MySQL": {
-            "Airline": "`SELECT satisfaction AS predicted satisfaction_ confidence AS confidence, satisfaction_explain AS info FROM mindsdb.airline_survey_model WHERE \u2018Custom Type\u2019 = \u2018Loyal Customer\u2019\tAND age=52 AND \u2018Type of Travel\u2019=\u2018Business travel\u2019 AND \u2018Class\u2019=\u2018Eco\u2019;`",
-            "Default": "Query here",
+            "Airline survey": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('airline_survey_model', 'satisfaction', 'SELECT * FROM data.airline_passenger_satisfaction');",
+            "Car Price": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('used_cars_model', 'price', 'SELECT * FROM data.used_cars_data');",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+	    "Retail sales": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('retail_web_store_model',  'sales',  'SELECT * FROM data.retail_store');",
+            "Bank churn": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('bank_churn_model', 'exited', 'SELECT * FROM data.bank_customer_churn');",
+            "Housing": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('home_rentals_model', 'price', 'SELECT * FROM data.home_rentals');"
         },
         "Postgress": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('airline_survey_model', 'satisfaction', 'SELECT * FROM airline_passenger_satisfaction');",
+            "Car price": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('used_cars_model', 'price', 'SELECT * FROM data.used_cars_data');",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
-        },
-        "MongoDB": {
-            "Airline": "Query here",
-            "Default": "Query here",
-            "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('retail_web_store_model',  'sales',  'SELECT * FROM data.retail_store');",
+            "Bank churn": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('bank_churn_model', 'exited', 'SELECT * FROM data.bank_customer_churn');",
+            "Housing": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('home_rentals_model', 'price', 'SELECT * FROM data.home_rentals');"
         },
         "MariaDB": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('airline_survey_model', 'satisfaction', 'SELECT * FROM airline_passenger_satisfaction');",
+            "Car Price": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('used_cars_model', 'price', 'SELECT * FROM data.used_cars_data');",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('retail_web_store_model',  'sales',  'SELECT * FROM data.retail_store');",
+            "Bank churn": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('bank_churn_model', 'exited', 'SELECT * FROM data.bank_customer_churn');",
+            "Housing": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('home_rentals_model', 'price', 'SELECT * FROM data.home_rentals');"
         },
         "ClickHouse": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('used_cars_model', 'price', 'SELECT * FROM data.used_cars_data');",
+            "Car price": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('used_cars_model', 'price', 'SELECT * FROM data.used_cars_data');",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('retail_web_store_model',  'sales',  'SELECT * FROM data.retail_store');",
+            "Bank churn": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('bank_churn_model', 'exited', 'SELECT * FROM data.bank_customer_churn');",
+            "Housing": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('home_rentals_model', 'price', 'SELECT * FROM data.home_rentals');"
         },
         "SQL Server": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "exec(\"INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ( \\'used_cars_model\\', \\'price\\', \\'SELECT * FROM data.used_cars_data\\');\")",
+            "Car price": "exec(\"INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES (\\'used_cars_model\\', \\'price\\', \\'SELECT * FROM data.used_cars_data\\');\")",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "exec('INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('retail_web_store_model',  'sales',  'SELECT * FROM data.retail_store');')",
+            "Bank churn": "INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('bank_churn_model', 'exited', 'SELECT * FROM data.bank_customer_churn');",
+            "Housing": "exec(\"INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES (\\'home_rentals_model\\', \\'price\\', \\'SELECT * FROM data.home_rentals\\');\")"
         }
     },
     "Predict": {
         "MySQL": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "SELECT satisfaction AS predicted, satisfaction_ confidence AS confidence FROM mindsdb.airline_survey_model WHERE when_data=\"{\"Customer Type\":\"Loyal\", \"age\":52 , \"Type of Travel\":\"Business travel\",\"Class\":\"Economy\"}\",\"Car price\": \"SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.used_cars_model WHERE when_data=\"{\"model\":\"A6\",\"mileage\":36203, \"transmission\":\"Automatic\", \"fuelType\":\"Diesel\", \"year\":\"2016\"}",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "SELECT sales AS predicted,  sales_confidence AS confidence FROM mindsdb.retail_web_store_model WHERE when_data=\"{\"Discount\":\"15\",\"ProductName\":\"book\",\"Region\":\"west\",\"ShipMode\":\"First class\"}",
+            "Bank churn": "SELECT exited AS predicted,  exited_confidence AS confidence FROM mindsdb.bank_churn_model WHERE when_data=\"{\"Balance\":\"422213\", \"IsActiveMember\":\"1\", \"EstimatedSalary\":\"10062.8\",\"CreditScore\":\"501\"}",
+            "Housing": "SELECT sales AS predicted,  sales_confidence AS confidence FROM mindsdb.retail_web_store_model WHERE when_data=\"{\"Discount\":\"15\",\"ProductName\":\"book\",\"Region\":\"west\",\"ShipMode\":\"First class\"}"
         },
         "Postgress": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "SELECT satisfaction AS predicted, satisfaction_ confidence AS confidence FROM mindsdb.airline_survey_model WHERE \"Customer Type\"=\"Loyal\" AND \"age\"=52 AND \"Type of Travel\"=\"Business travel\" AND \"Class\"=\"Economy\"",
+            "Car price": "SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.used_cars_model WHERE model = \"A6\" AND mileage = 36203 AND transmission = \"Automatic\" AND fuelType = \"Diesel\" AND year = 2016;",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
-        },
-        "MongoDB": {
-            "Airline": "Query here",
-            "Default": "Query here",
-            "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "SELECT sales AS predicted,  sales_confidence AS confidence FROM mindsdb.retail_web_store_model WHERE Discount = 15 AND ProductName = \"book\" AND Region = \"west\" AND ShipMode = \"First class\";",
+            "Bank churn": "SELECT exited AS predicted,  exited_confidence AS confidence FROM mindsdb.bank_churn_model WHERE Balance = 422213 AND IsActiveMember=1 AND EstimatedSalary = 10062.8 AND CreditScore = 501;",
+            "Housing": "SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.home_rentals_model WHERE number_of_rooms = 4 AND number_of_bathrooms=2 AND sqft = 800 AND neighborhood = \"downtown\";"
         },
         "MariaDB": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline": "SELECT satisfaction AS predicted, satisfaction_ confidence AS confidence FROM mindsdb.airline_survey_model WHERE \"Customer Type\"=\"Loyal\" AND \"age\"=52 AND \"Type of Travel\"=\"Business travel\" AND \"Class\"=\"Economy",
+             "Car price": "SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.used_cars_model WHERE model = \"A6\" AND mileage = 36203 AND transmission = \"Automatic\" AND fuelType = \"Diesel\" AND year = 2016;",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "SELECT sales AS predicted,  sales_confidence AS confidence FROM mindsdb.retail_web_store_model WHERE Discount = 15 AND ProductName = \"book\" AND Region = \"west\" AND ShipMode = \"First class\";",
+            "Bank churn": "SELECT exited AS predicted,  exited_confidence AS confidence FROM mindsdb.bank_churn_model WHERE Balance = 422213 AND IsActiveMember=1 AND EstimatedSalary = 10062.8 AND CreditScore = 501;",
+            "Housing": "SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.home_rentals_model WHERE number_of_rooms = 4 AND number_of_bathrooms=2 AND sqft = 800 AND neighborhood = \"downtown\";"
         },
         "ClickHouse": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "SELECT satisfaction AS predicted, satisfaction_ confidence AS confidence FROM mindsdb.airline_survey_model WHERE \"Customer Type\"=\"Loyal\" AND \"age\"=52 AND \"Type of Travel\"=\"Business travel\" AND \"Class\"=\"Economy\"",
+             "Car price": "SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.used_cars_model WHERE model = \"A6\" AND mileage = 36203 AND transmission = \"Automatic\" AND fuelType = \"Diesel\" AND year = 2016;",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "SELECT sales AS predicted,  sales_confidence AS confidence FROM mindsdb.retail_web_store_model WHERE Discount = 15 AND ProductName = \"book\" AND Region = \"west\" AND ShipMode = \"First class\";",
+            "Bacnk churn": "SELECT exited AS predicted,  exited_confidence AS confidence FROM mindsdb.bank_churn_model WHERE Balance = 422213 AND IsActiveMember=1 AND EstimatedSalary = 10062.8 AND CreditScore = 501;",
+            "Housing": "SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.home_rentals_model WHERE number_of_rooms = 4 AND number_of_bathrooms=2 AND sqft = 800 AND neighborhood = \"downtown\";"
         },
         "SQL Server": {
-            "Airline": "Query here",
-            "Default": "Query here",
+            "Airline survey": "exec(\\'SELECT satisfaction AS predicted, satisfaction_ confidence AS confidence FROM mindsdb.airline_survey_model WHERE \"Customer Type\"=\"Loyal\" AND \"age\"=52 AND \"Type of Travel\"=\"Business travel\" AND \"Class\"=\"Economy\"\\') AT mindsdb",
+             "Car price": "exec(\\'SELECT satisfaction AS predicted, satisfaction_ confidence AS confidence FROM mindsdb.airline_survey_model WHERE \"Customer Type\"=\"Loyal\" AND \"age\"=52 AND \"Type of Travel\"=\"Business travel\" AND \"Class\"=\"Economy\"\\') AT mindsdb",
             "Time series": "Query here",
-            "Sales": "Query here",
-            "Credit Card": "Query here",
-            "Housing": "Query here"
+            "Retail sales": "SELECT sales AS predicted,  sales_confidence AS confidence FROM mindsdb.retail_web_store_model WHERE Discount = 15 AND ProductName = \"book\" AND Region = \"west\" AND ShipMode = \"First class\";",
+            "Bank Churn": "exec(\\'SELECT exited AS predicted,  exited_confidence AS confidence FROM mindsdb.bank_churn_model WHERE Balance = 422213 AND IsActiveMember=1 AND EstimatedSalary = 10062.8 AND CreditScore = 501;\\')",
+            "Housing": "exec(\\'SELECT price AS predicted, price_confidence AS confidence FROM mindsdb.home_rentals_model WHERE number_of_rooms = 4 AND number_of_bathrooms=2 AND sqft = 800 AND neighborhood = \"downtown\";\\')"
         }
     }
 }
