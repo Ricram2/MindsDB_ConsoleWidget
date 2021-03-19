@@ -331,8 +331,8 @@ function App() {
 
   return (
     <div className="w-screen h-screen subpixel-antialiased ">
-      <div className="container mx-20 mt-20 justify-self-center">
-        <div className="grid grid-cols-6 gap-6 self-center">
+      <div className="container px-20 mt-20 justify-self-center">
+        <div className="grid grid-cols-6 gap-x-6 gap-y-1	 self-center">
           <div className="col-span-1 text-center">
 
             <button className={database === 'Mysql' ? "btn-sel" : "btn"} onClick={() => setDataBase('Mysql')}>MySql</button>
@@ -357,9 +357,31 @@ function App() {
           </div>
           <div className="col-span-3 text-center">
             <button className={method === 'Predict' ? "btn-sel" : "btn"} onClick={() => setMethod('Predict')} >Predict</button>
+          </div>
+
+          <div className="col-span-1 text-center">
+            <button className={dataset === 'Airline' ? "btn-sel" : "btn"} onClick={() => setDataset('Airline')} >Airline</button>
+          </div>
+          <div className="col-span-1 text-center">
+            <button className={dataset === 'Car' ? "btn-sel" : "btn"} onClick={() => setDataset('Car')} >Car</button>
+          </div>
+          <div className="col-span-1 text-center">
+            <button className={dataset === 'Timeseries' ? "btn-sel" : "btn"} onClick={() => setDataset('Timeseries')} >Timeseries</button>
+          </div>
+          <div className="col-span-1 text-center">
+            <button className={dataset === 'Sales' ? "btn-sel" : "btn"} onClick={() => setDataset('Sales')} >Sales</button>
 
           </div>
-          <div className="col-span-6 justify-self-center">
+          <div className="col-span-1 text-center">
+            <button className={dataset === 'Bank' ? "btn-sel" : "btn"} onClick={() => setDataset('Bank')} >Bank</button>
+
+          </div>
+          <div className="col-span-1 text-center">
+            <button className={dataset === 'Housing' ? "btn-sel" : "btn"} onClick={() => setDataset('Housing')} >Housing</button>
+          </div>
+
+
+          <div className="col-span-6 mt-6 justify-self-center">
             <div className="bg-black bg-opacity-75 p-8 rounded-2xl max-w-xl h-80">
 
               <div className="grid grid-cols-6 gap-4">
@@ -372,7 +394,7 @@ function App() {
                   Untitled-1
                 </div>
               </div>
-              <div className="grid-cols-6 py-10 text-white">
+              <div className="grid-cols-6 py-10 text-white px-6 break-normal"  >
 
                 {database === 'Mysql' && method === 'Train' && dataset === 'Airline' &&
                 <code  dangerouslySetInnerHTML={{ __html: highlightedsqlTrainAirlineString }}>
@@ -624,26 +646,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 text-center">
-            <button className={dataset === 'Airline' ? "btn-sel" : "btn"} onClick={() => setDataset('Airline')} >Airline</button>
-          </div>
-          <div className="col-span-1 text-center">
-            <button className={dataset === 'Car' ? "btn-sel" : "btn"} onClick={() => setDataset('Car')} >Car</button>
-          </div>
-          <div className="col-span-1 text-center">
-            <button className={dataset === 'Timeseries' ? "btn-sel" : "btn"} onClick={() => setDataset('Timeseries')} >Timeseries</button>
-          </div>
-          <div className="col-span-1 text-center">
-            <button className={dataset === 'Sales' ? "btn-sel" : "btn"} onClick={() => setDataset('Sales')} >Sales</button>
-
-          </div>
-          <div className="col-span-1 text-center">
-            <button className={dataset === 'Bank' ? "btn-sel" : "btn"} onClick={() => setDataset('Bank')} >Bank</button>
-
-          </div>
-          <div className="col-span-1 text-center">
-            <button className={dataset === 'Housing' ? "btn-sel" : "btn"} onClick={() => setDataset('Housing')} >Housing</button>
-          </div>
+          
         </div>
       </div>
     </div>

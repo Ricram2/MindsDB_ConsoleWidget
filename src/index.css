@@ -16,5 +16,5 @@
 }
 
 .btn-sel {
-    @apply text-center py-3 text-green-700 w-full text-lg focus:outline-none ;
+    @apply text-center py-1 text-green-700 w-full text-lg focus:outline-none ;
 }
