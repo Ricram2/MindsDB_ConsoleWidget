@@ -331,7 +331,7 @@ function App() {
 
   return (
     <div className="w-screen h-screen subpixel-antialiased ">
-      <div className="container px-20 mt-20 justify-self-center">
+      <div className="px-20 mt-20 justify-self-center">
         <div className="grid grid-cols-6 gap-x-6 gap-y-1	 self-center">
           <div className="col-span-1 text-center">
 
